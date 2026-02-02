@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+/*Importing fonts*/
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+
+/* Editing/adding colors */
+@theme {
+    --color-brand: #D946EF;
+    --color-light: #B1EAFF;
+    --color-dark: #303030;
+    --color-intro: #4D4D4D;
+    --color-login: #33D0C3;
+    --color-register: #21DF77;
+}
+
+/* Editing/adding fonts */
+@theme {
+    --font-heading-1: "playfair Display", Georgia, Serif;
+    --font-heading-2: "IBM plex Mono", monospace;
+    --font-button: "Inter", sans-serif;
+}
