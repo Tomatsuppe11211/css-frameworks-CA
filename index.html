@@ -6,15 +6,16 @@
     <title>Kingpin.Social/Home</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen w-full flex-col">
     <!--Creating the login modal-->
-    <div id="login-mobile" class="w-screen flex justify-center align-center">
-        <form class="bg-login flex flex-col w-lg border border-white 
-                text-white rounded-2xl p-5 absolute align-center justify-center gap-5 z-10"
+    <div id="login-modal" class="fixed inset-0 hidden justify-center items-center bg-black/50 z-50">
+        <form class="bg-login flex flex-col w-md border border-white 
+                text-white rounded-2xl p-5 relative items-center justify-center gap-5 z-10
+                shadow-xl shadow-black"
             >
             <button class="w-fit p-2 text-4xl absolute right-5 top-2 font-bold hover:text-red-500 text-stroke">X</button>
             <h2 class="text-center text-4xl font-bold text-inter text-stroke">Login</h2>
-            <div class="flex flex-col border w-fit p-2 gap-3">
+            <div class="flex flex-col w-fit p-2 gap-3">
                 <label 
                     for="loginEmail"
                     class="w-75 text-2xl text-stroke font-bold"
@@ -28,7 +29,7 @@
                     required
                     >
             </div>
-            <div class="flex flex-col border w-fit p-2 gap-3">
+            <div class="flex flex-col w-fit p-2 gap-3">
                 <label 
                     for="loginPassword"
                     class="w-75 text-2xl text-stroke font-bold"
@@ -43,12 +44,13 @@
                     >
             </div>
             
-            <p class="text-black underline text-lg text-center">Forgot password? Reset <a href="#" class="text-blue-700 hover:text-blue-500">HERE</a></p>
+            <p class="text-black text-lg text-center">Forgot password? Reset <a href="#" class="hover:text-brand underline hover:font-bold">HERE</a></p>
             <input 
                 type="submit" 
                 value="Login" 
+                role="button"
                 id="loginButton"
-                class="text-2xl border border-black shadow-lg shadow-black w-30 py-1 px-3 rounded-2xl font-bold text-stroke bg-login-button"
+                class="text-2xl border border-black shadow-lg shadow-black w-30 py-1 px-3 rounded-2xl font-bold text-stroke bg-login-button mb-2"
                 >
         </form>
     </div>
@@ -59,11 +61,6 @@
         <h1 class="text-3xl leading-12 text-brand font-bold font-playfair">Kingpin.social</h1>
         <img src="images/crown.png" class="h-12">
     </header>
-
-
-
-
-
 
 
     <main class="bg-[url('/images/background.png')] bg-cover bg-center bg-no-repeat 
@@ -92,18 +89,10 @@
             >Register</button>
         </div>
     </main>
-    
-
-
-
-
-
-
-
 
 
     <footer class="border grid grid-cols col-span-full align-center 
-            justify-center w-screen text-center"
+            justify-center w-full text-center"
         >
 
         <div class="mt-5 flex flex-col">
