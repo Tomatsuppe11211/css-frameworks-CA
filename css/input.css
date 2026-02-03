@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/*Adding a dark mode*/
+@custom-variant dark (&:where(.dark, .dark *));
+
 /*Importing fonts*/
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
@@ -12,12 +15,25 @@
     --color-dark: #303030;
     --color-intro: #4D4D4D;
     --color-login: #33D0C3;
+    --color-login-button: #3FCCFF;
+    --color-login-hover: #43ffef;
+    --color-login-dark: #D946EF;
     --color-register: #21DF77;
+    --color-register-hover: #30ff8d;
 }
 
 /* Editing/adding fonts */
 @theme {
-    --font-heading-1: "playfair Display", Georgia, Serif;
-    --font-heading-2: "IBM plex Mono", monospace;
-    --font-button: "Inter", sans-serif;
+    --font-playfair: "playfair Display", Georgia, Serif;
+    --font-plex: "IBM plex Mono", monospace;
+    --font-inter: "Inter", sans-serif;
+}
+
+/*Adding a text stroke*/
+@utility text-stroke{
+    -webkit-text-stroke: 0.05rem black;
+}
+
+.class{
+    background-color: #30ff8d;
 }

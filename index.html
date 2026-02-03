@@ -6,10 +6,57 @@
     <title>Kingpin.Social/Home</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="min-h-screen grid grid-rows-[auto_1fr_auto]">
+<body class="min-h-screen flex flex-col">
+    <!--Creating the login modal-->
+    <div id="login-mobile" class="w-screen flex justify-center align-center">
+        <form class="bg-login flex flex-col w-lg border border-white 
+                text-white rounded-2xl p-5 absolute align-center justify-center gap-5 z-10"
+            >
+            <button class="w-fit p-2 text-4xl absolute right-5 top-2 font-bold hover:text-red-500 text-stroke">X</button>
+            <h2 class="text-center text-4xl font-bold text-inter text-stroke">Login</h2>
+            <div class="flex flex-col border w-fit p-2 gap-3">
+                <label 
+                    for="loginEmail"
+                    class="w-75 text-2xl text-stroke font-bold"
+                >Email</label>
+
+                <input 
+                    id="loginEmail"
+                    type="email" 
+                    placeholder="Enter email..."
+                    class="w-75 border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
+                    required
+                    >
+            </div>
+            <div class="flex flex-col border w-fit p-2 gap-3">
+                <label 
+                    for="loginPassword"
+                    class="w-75 text-2xl text-stroke font-bold"
+                >Password</label>
+
+                <input 
+                    id="loginPassword"
+                    type="password" 
+                    placeholder="Enter Password..."
+                    class="w-75 border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
+                    required
+                    >
+            </div>
+            
+            <p class="text-black underline text-lg text-center">Forgot password? Reset <a href="#" class="text-blue-700 hover:text-blue-500">HERE</a></p>
+            <input 
+                type="submit" 
+                value="Login" 
+                id="loginButton"
+                class="text-2xl border border-black shadow-lg shadow-black w-30 py-1 px-3 rounded-2xl font-bold text-stroke bg-login-button"
+                >
+        </form>
+    </div>
+
+    
     <header class="flex flex-row justify-evenly p-4 h-20 bg-white border-b border-brand align-center">
         <img src="images/crown.png" class="h-12">
-        <h1 class="text-3xl leading-12 text-brand font-bold font-heading-1">Kingpin.social</h1>
+        <h1 class="text-3xl leading-12 text-brand font-bold font-playfair">Kingpin.social</h1>
         <img src="images/crown.png" class="h-12">
     </header>
 
@@ -19,15 +66,30 @@
 
 
 
-    <main class="bg-[url('/images/background.png')] bg-cover bg-no-repeat w-screen min-h-screen grid grid-cols-1 items-center">
-        <div class="bg-white w-fit max-w-md h-fit text-center py-10 px-16 mt-10 rounded-3xl shadow-2xl shadow-black mx-auto">
-            <h1 class="text-2xl font-heading-2 font-bold mb-3">Pin your way to the top</h1>
-            <p class="text-lg text-intro leading-relaxed">Create , share and brag about your content</p>
+    <main class="bg-[url('/images/background.png')] bg-cover bg-center bg-no-repeat 
+                flex flex-col flex-1 items-center justify-center px-4 py-10"
+        >
+
+        <div class="bg-white w-fit max-w-md h-fit text-center py-10 
+                px-16 mt-10 rounded-3xl shadow-2xl shadow-black mx-auto mb-10"
+            >
+            <h1 class="text-2xl font-plex font-bold mb-3">Pin your way to the top</h1>
+            <p class="text-lg text-inter">Create , share and brag about your content</p>
         </div>
 
-        <div class="flex flex-col h-fit py-5 align-center">
-            <button class="mt-5 mx-auto p-4 border border-black rounded-full text-xl font-bold font-button w-30 shadow-xl shadow-black text-white bg-login">Login</button>
-            <button class="mt-5 mx-auto p-4 border border-black rounded-full text-xl font-bold font-button w-35 shadow-xl shadow-black text-white bg-register">Register</button>
+        <div class="flex flex-col h-fit py-5 align-center gap-5">
+            <button class="mx-auto px-6 py-3 border border-black 
+                rounded-full text-2xl font-bold font-button shadow-xl 
+                shadow-black text-white text-stroke bg-login
+                hover:bg-login-hover"
+            >Login</button>
+
+
+            <button class="mx-auto px-6 py-3 border border-black 
+                rounded-full text-2xl font-bold font-button shadow-xl 
+                shadow-black text-white text-stroke bg-register 
+                hover:bg-register-hover"
+            >Register</button>
         </div>
     </main>
     
@@ -40,29 +102,32 @@
 
 
 
-    <footer class="border grid grid-cols col-span-full align-center justify-center w-screen text-center">
+    <footer class="border grid grid-cols col-span-full align-center 
+            justify-center w-screen text-center"
+        >
+
         <div class="mt-5 flex flex-col">
             <h3 class="text-brand text-xl font-bold">Join us</h3>
-            <a href="#">About us</a>
-            <a href="#">Login</a>
-            <a href="#">Register</a>
+            <a href="#" class="hover:text-brand">About us</a>
+            <a href="#" class="hover:text-brand">Login</a>
+            <a href="#" class="hover:text-brand">Register</a>
         </div>
 
         <div class="mt-5 flex flex-col">
             <h3 class="text-brand text-xl font-bold">Policies</h3>
-            <a href="#">Terms of use</a>
-            <a href="#">Privacy Policy</a>
+            <a href="#" class="hover:text-brand">Terms of use</a>
+            <a href="#" class="hover:text-brand">Privacy Policy</a>
         </div>
 
         <div class="mt-5 flex flex-col">
             <h3 class="text-brand text-xl font-bold">Contact</h3>
-            <a href="#">Contact us</a>
-            <a href="#">Report issue</a>
+            <a href="#" class="hover:text-brand">Contact us</a>
+            <a href="#" class="hover:text-brand">Report issue</a>
         </div>
 
         <div class="mt-5 flex flex-col items-center justify-center">
             <img src="images/crown.png" class="h-8 w-10">
-            <h3 class="text-xl text-brand font-bold font-heading-1">Kingpin.social</h3>
+            <h3 class="text-xl text-brand font-bold font-playfair">Kingpin.social</h3>
         </div>
     </footer>
 </body>
