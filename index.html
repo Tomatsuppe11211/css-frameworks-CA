@@ -69,77 +69,78 @@
     <!--creating the register modal-->
     <div 
         id="register-modal"
-        class="fixed inset-0 hidden justify-center items-center bg-black/50 z-50 overflow-y-auto p-4"
+        class="fixed inset-0 hidden items-center justify-center bg-black/50 z-50 p-4"
     >
-        <div class="min-h-full flex items-center justify-center py-4">
+        <div class="w-full max-w-md lg:max-w-2xl overflow-y-auto max-h-[90vh]">
             <form 
-                class="bg-register flex flex-col w-full max-w-md border border-white 
-                    text-white rounded-2xl p-5 relative items-center justify-center gap-5 z-10
-                    shadow-xl shadow-black"
+                class="bg-register flex flex-col w-full border border-white 
+                        text-white rounded-2xl p-6 lg:p-8 relative items-center justify-center gap-5
+                        shadow-xl shadow-black"
         >
                 <button 
+                    type="button"
                     id="closeRegister"
                     class="w-fit p-2 text-4xl absolute right-5 top-2 font-bold hover:text-red-500 text-stroke cursor-pointer"
                 >X</button>
 
                 <h2 class="text-center text-4xl font-bold text-inter text-stroke">Register</h2>
 
-                <div class="flex flex-col w-fit p-2 gap-3">
+                <div class="flex flex-col w-full max-w-sm lg:max-w-md p-2 gap-3">
                     <label 
                         for="createUsername"
-                        class="w-75 text-2xl text-stroke font-bold"
+                        class="text-2xl text-stroke font-bold"
                     >Create username</label>
 
                     <input 
                         id="createUsername"
                         type="text" 
                         placeholder="Create username"
-                        class="w-75 border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
+                        class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
                         required
                     >
                 </div>
 
-                <div class="flex flex-col w-fit p-2 gap-3">
+                <div class="flex flex-col w-full max-w-sm lg:max-w-md p-2 gap-3">
                     <label 
                         for="addEmail"
-                        class="w-75 text-2xl text-stroke font-bold"
+                        class="text-2xl text-stroke font-bold"
                     >Email</label>
 
                     <input 
                         id="addEmail"
                         type="email" 
                         placeholder="Enter email"
-                        class="w-75 border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
+                        class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
                         required
                     >
                 </div>
 
-                <div class="flex flex-col w-fit p-2 gap-3">
+                <div class="flex flex-col w-full max-w-sm lg:max-w-md p-2 gap-3">
                     <label 
                         for="createPassword"
-                        class="w-75 text-2xl text-stroke font-bold"
+                        class="text-2xl text-stroke font-bold"
                     >Create Password</label>
 
                     <input 
                         id="createPassword"
                         type="password" 
                         placeholder="Create password"
-                        class="w-75 border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
+                        class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
                         required
                     >
                 </div>
 
-                <div class="flex flex-col w-fit p-2 gap-3">
+                <div class="flex flex-col w-full max-w-sm lg:max-w-md p-2 gap-3">
                     <label 
                         for="confirmPassword"
-                        class="w-75 text-2xl text-stroke font-bold"
+                        class="text-2xl text-stroke font-bold"
                     >Confirm password</label>
 
                     <input 
                         id="confirmPassword"
                         type="password" 
                         placeholder="Confirm password"
-                        class="w-75 border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
+                        class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
                         required
                     >
                 </div>
