@@ -6,15 +6,25 @@
     <title>Kingpin.Social/Home</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="min-h-screen w-full flex-col">
+<body class="h-screen w-full flex flex-col">
     <!--Creating the login modal-->
-    <div id="login-modal" class="fixed inset-0 hidden justify-center items-center bg-black/50 z-50">
-        <form class="bg-login flex flex-col w-md border border-white 
+    <div 
+        id="login-modal" 
+        class="fixed inset-0 hidden justify-center items-center bg-black/50 z-50 overflow-y-auto p-4"
+    >
+
+        <div class="min-h-full flex items-center justify-center py-4">
+        <form class="bg-login flex flex-col w-full max-w-md border border-white 
                 text-white rounded-2xl p-5 relative items-center justify-center gap-5 z-10
                 shadow-xl shadow-black"
             >
-            <button class="w-fit p-2 text-4xl absolute right-5 top-2 font-bold hover:text-red-500 text-stroke">X</button>
+            <button 
+                id="closeLogin"
+                class="w-fit p-2 text-4xl absolute right-5 top-2 font-bold hover:text-red-500 text-stroke cursor-pointer"
+            >X</button>
+
             <h2 class="text-center text-4xl font-bold text-inter text-stroke">Login</h2>
+
             <div class="flex flex-col w-fit p-2 gap-3">
                 <label 
                     for="loginEmail"
@@ -43,78 +53,170 @@
                     required
                     >
             </div>
-            
             <p class="text-black text-lg text-center">Forgot password? Reset <a href="#" class="hover:text-brand underline hover:font-bold">HERE</a></p>
             <input 
                 type="submit" 
-                value="Login" 
-                role="button"
+                value="Login"
                 id="loginButton"
-                class="text-2xl border border-black shadow-lg shadow-black w-30 py-1 px-3 rounded-2xl font-bold text-stroke bg-login-button mb-2"
+                class="text-2xl border border-black shadow-lg shadow-black w-30 py-1 px-3 rounded-2xl font-bold 
+                    text-stroke bg-login-button mb-2 cursor-pointer"
                 >
         </form>
+        </div>
     </div>
 
+    <!--creating the register modal-->
+    <div 
+        id="register-modal"
+        class="fixed inset-0 hidden justify-center items-center bg-black/50 z-50 overflow-y-auto p-4"
+    >
+        <div class="min-h-full flex items-center justify-center py-4">
+            <form 
+                class="bg-register flex flex-col w-full max-w-md border border-white 
+                    text-white rounded-2xl p-5 relative items-center justify-center gap-5 z-10
+                    shadow-xl shadow-black"
+        >
+                <button 
+                    id="closeRegister"
+                    class="w-fit p-2 text-4xl absolute right-5 top-2 font-bold hover:text-red-500 text-stroke cursor-pointer"
+                >X</button>
+
+                <h2 class="text-center text-4xl font-bold text-inter text-stroke">Register</h2>
+
+                <div class="flex flex-col w-fit p-2 gap-3">
+                    <label 
+                        for="createUsername"
+                        class="w-75 text-2xl text-stroke font-bold"
+                    >Create username</label>
+
+                    <input 
+                        id="createUsername"
+                        type="text" 
+                        placeholder="Create username"
+                        class="w-75 border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
+                        required
+                    >
+                </div>
+
+                <div class="flex flex-col w-fit p-2 gap-3">
+                    <label 
+                        for="addEmail"
+                        class="w-75 text-2xl text-stroke font-bold"
+                    >Email</label>
+
+                    <input 
+                        id="addEmail"
+                        type="email" 
+                        placeholder="Enter email"
+                        class="w-75 border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
+                        required
+                    >
+                </div>
+
+                <div class="flex flex-col w-fit p-2 gap-3">
+                    <label 
+                        for="createPassword"
+                        class="w-75 text-2xl text-stroke font-bold"
+                    >Create Password</label>
+
+                    <input 
+                        id="createPassword"
+                        type="password" 
+                        placeholder="Create password"
+                        class="w-75 border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
+                        required
+                    >
+                </div>
+
+                <div class="flex flex-col w-fit p-2 gap-3">
+                    <label 
+                        for="confirmPassword"
+                        class="w-75 text-2xl text-stroke font-bold"
+                    >Confirm password</label>
+
+                    <input 
+                        id="confirmPassword"
+                        type="password" 
+                        placeholder="Confirm password"
+                        class="w-75 border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
+                        required
+                    >
+                </div>
+
+                <p 
+                    class="text-black text-lg text-center">
+                    Already have an account? login 
+                    <a href="#" class="hover:text-brand underline hover:font-bold"
+                    >HERE</a>
+                </p>
+
+                <input 
+                    type="submit" 
+                    value="Register"
+                    id="registerButton"
+                    class="text-2xl border border-black shadow-lg shadow-black w-35 py-1 
+                            px-3 rounded-2xl font-bold text-stroke bg-login-button mb-2 cursor-pointer"
+                >
+            </form>
+        </div>
+    </div>
     
-    <header class="flex flex-row justify-evenly p-4 h-20 bg-white border-b border-brand align-center">
+    <header class="flex flex-row justify-evenly p-4 h-20 bg-white border-b border-brand items-center">
         <img src="images/crown.png" class="h-12">
-        <h1 class="text-3xl leading-12 text-brand font-bold font-playfair">Kingpin.social</h1>
+        <h1 class="text-3xl lg:text-4xl text-brand font-bold font-playfair">Kingpin.social</h1>
         <img src="images/crown.png" class="h-12">
     </header>
 
+    <main class="bg-[url('/images/background.png')] bg-cover bg-center bg-no-repeat flex-1 min-h-0
+            flex flex-col grow items-center justify-center px-4 py-20 ">
 
-    <main class="bg-[url('/images/background.png')] bg-cover bg-center bg-no-repeat 
-                flex flex-col flex-1 items-center justify-center px-4 py-10"
-        >
-
-        <div class="bg-white w-fit max-w-md h-fit text-center py-10 
-                px-16 mt-10 rounded-3xl shadow-2xl shadow-black mx-auto mb-10"
+        <div class="bg-white max-w-md lg:max-w-2xl h-fit text-center py-10 flex flex-col items-center
+                px-8 md:px-16 rounded-3xl shadow-2xl shadow-black mx-auto mb-10"
             >
-            <h1 class="text-2xl font-plex font-bold mb-3">Pin your way to the top</h1>
-            <p class="text-lg text-inter">Create , share and brag about your content</p>
+            <h1 class="text-2xl md:text-3xl font-plex font-bold mb-3">Pin your way to the top</h1>
+            <p class="text-lg text-inter md:text-xl">Create , share and brag about your content</p>
         </div>
 
-        <div class="flex flex-col h-fit py-5 align-center gap-5">
-            <button class="mx-auto px-6 py-3 border border-black 
-                rounded-full text-2xl font-bold font-button shadow-xl 
+        <div class="flex flex-col md:flex-row h-fit py-5 items-center gap-5">
+            <button class="px-6 py-3 border border-black 
+                rounded-full text-2xl md:text-3xl font-bold font-button shadow-xl 
                 shadow-black text-white text-stroke bg-login
-                hover:bg-login-hover"
+                hover:bg-login-hover cursor-pointer"
             >Login</button>
 
 
-            <button class="mx-auto px-6 py-3 border border-black 
-                rounded-full text-2xl font-bold font-button shadow-xl 
+            <button class="px-6 py-3 border border-black 
+                rounded-full text-2xl md:text-3xl font-bold font-button shadow-xl 
                 shadow-black text-white text-stroke bg-register 
-                hover:bg-register-hover"
+                hover:bg-register-hover cursor-pointer"
             >Register</button>
         </div>
     </main>
 
-
-    <footer class="border grid grid-cols col-span-full align-center 
-            justify-center w-full text-center"
+    <footer class="border-t border-brand flex flex-col items-center gap-5 py-6
+            justify-center w-full text-center md:flex-row md:justify-evenly bg-white"
         >
 
-        <div class="mt-5 flex flex-col">
+        <div class="flex flex-col">
             <h3 class="text-brand text-xl font-bold">Join us</h3>
             <a href="#" class="hover:text-brand">About us</a>
             <a href="#" class="hover:text-brand">Login</a>
             <a href="#" class="hover:text-brand">Register</a>
         </div>
 
-        <div class="mt-5 flex flex-col">
+        <div class="flex flex-col">
             <h3 class="text-brand text-xl font-bold">Policies</h3>
             <a href="#" class="hover:text-brand">Terms of use</a>
             <a href="#" class="hover:text-brand">Privacy Policy</a>
         </div>
 
-        <div class="mt-5 flex flex-col">
+        <div class="flex flex-col">
             <h3 class="text-brand text-xl font-bold">Contact</h3>
             <a href="#" class="hover:text-brand">Contact us</a>
             <a href="#" class="hover:text-brand">Report issue</a>
         </div>
 
-        <div class="mt-5 flex flex-col items-center justify-center">
+        <div class="flex flex-col items-center justify-center">
             <img src="images/crown.png" class="h-8 w-10">
             <h3 class="text-xl text-brand font-bold font-playfair">Kingpin.social</h3>
         </div>
