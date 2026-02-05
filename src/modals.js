@@ -7,6 +7,8 @@ const registerModalButton = document.getElementById('registerModalButton');
 const loginModal = document.getElementById('login-modal');
 const registerModal = document.getElementById('register-modal');
 
+//Getting the error message for register modal
+const errorMessage = document.getElementById('registerError');
 
 //Getting the close buttons for the modals
 const closeLoginButton = document.getElementById('closeLogin');
@@ -25,23 +27,23 @@ function proceed(){
 
 
 //register function to check passwords and username
-registerButton.addEventListener('click', function(e){
-    e.preventDefault();
-    
-    //Getting username
+registerButton.addEventListener('click', function(){
+    //Getting register details
     const username = document.getElementById('createUsername').value;
-
-    //Getting the values of the passwords
+    const email = document.getElementById('addEmail').value
     const createdPassword = document.getElementById('createPassword').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
 
-    if(createdPassword === confirmPassword){
-        alert(`Hi ${username}`);
-    } else {
-        alert(`The paswords do not match`);
+    if(username != "" && email != ""){
+        if(createdPassword.length < 8){
+            errorMessage.innerHTML = `Your password must contain at least 8 characters`
+            errorMessage.style.display = 'block'
+        } else if(createdPassword != confirmPassword){
+            errorMessage.innerHTML = `Your passwords do not match`
+            errorMessage.style.display = 'block'
+        }
     }
 });
-
 
 //Functions to make modals visible/invisible
 function showLoginModal(){

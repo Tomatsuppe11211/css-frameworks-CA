@@ -11,12 +11,12 @@
     <!--Creating the login modal-->
     <div 
         id="login-modal" 
-        class="fixed inset-0 hidden justify-center items-center bg-black/50 z-50 overflow-y-auto p-4"
+        class="fixed inset-0 hidden items-center justify-center bg-black/50 z-50 overflow-y-auto p-4"
     >
 
-        <div class="min-h-full flex items-center justify-center py-4">
-        <form class="bg-login flex flex-col w-full max-w-md border border-white 
-                text-white rounded-2xl p-5 relative items-center justify-center gap-5 z-10
+        <div class="w-full max-w-md lg:max-w-2xl overflow-y-auto max-h-[90vh] rounded-xl">
+        <form class="bg-login flex flex-col border border-white 
+                text-white rounded-2xl p-5 relative items-center justify-center gap-5 z-50
                 shadow-xl shadow-black"
             >
             <button 
@@ -26,31 +26,32 @@
 
             <h2 class="text-center text-4xl font-bold text-inter text-stroke">Login</h2>
 
-            <div class="flex flex-col w-fit p-2 gap-3">
+            <div class="flex flex-col w-full max-w-sm lg:max-w-md p-2 gap-3">
                 <label 
                     for="loginEmail"
-                    class="w-75 text-2xl text-stroke font-bold"
+                    class="text-2xl text-stroke font-bold"
                 >Email</label>
 
                 <input 
                     id="loginEmail"
                     type="email" 
                     placeholder="Enter email..."
-                    class="w-75 border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
+                    class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
                     required
                     >
             </div>
-            <div class="flex flex-col w-fit p-2 gap-3">
+            <div class="flex flex-col w-full max-w-sm lg:max-w-md p-2 gap-3">
                 <label 
                     for="loginPassword"
-                    class="w-75 text-2xl text-stroke font-bold"
+                    class="text-2xl text-stroke font-bold"
                 >Password</label>
 
                 <input 
                     id="loginPassword"
                     type="password" 
                     placeholder="Enter Password..."
-                    class="w-75 border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
+                    class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
+                    minlength="8"
                     required
                     >
             </div>
@@ -71,7 +72,7 @@
         id="register-modal"
         class="fixed inset-0 hidden items-center justify-center bg-black/50 z-50 p-4"
     >
-        <div class="w-full max-w-md lg:max-w-2xl overflow-y-auto max-h-[90vh]">
+        <div class="w-full max-w-md lg:max-w-2xl overflow-y-auto max-h-[90vh] rounded-xl">
             <form 
                 class="bg-register flex flex-col w-full border border-white 
                         text-white rounded-2xl p-6 lg:p-8 relative items-center justify-center gap-5
@@ -84,6 +85,8 @@
                 >X</button>
 
                 <h2 class="text-center text-4xl font-bold text-inter text-stroke">Register</h2>
+                
+                <p id="registerError" class="hidden p-2 border border-white bg-red-400 w-full max-w-sm lg:max-w-md text-center rounded-lg text-lg font-bold">The passwords do not match</p>
 
                 <div class="flex flex-col w-full max-w-sm lg:max-w-md p-2 gap-3">
                     <label 
@@ -126,6 +129,7 @@
                         type="password" 
                         placeholder="Create password"
                         class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
+                        minlength="8"
                         required
                     >
                 </div>
@@ -141,6 +145,7 @@
                         type="password" 
                         placeholder="Confirm password"
                         class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
+                        minlength="8"
                         required
                     >
                 </div>
@@ -196,31 +201,31 @@
     </main>
 
     <footer class="border-t border-brand flex flex-col items-center gap-5 py-6
-            justify-center w-full text-center md:flex-row md:justify-evenly bg-white"
+            justify-center w-full text-center lg:flex-row md:justify-evenly bg-white"
         >
 
-        <div class="flex flex-col">
-            <h3 class="text-brand text-xl font-bold">Join us</h3>
-            <a href="#" class="hover:text-brand">About us</a>
-            <a href="#" class="hover:text-brand">Login</a>
-            <a href="#" class="hover:text-brand">Register</a>
+        <div class="flex flex-col lg:h-30">
+            <h3 class="text-brand text-xl lg:text-2xl font-bold">Join us</h3>
+            <a href="#" class="hover:text-brand hover:underline lg:text-lg">About us</a>
+            <a href="#" class="hover:text-brand hover:underline lg:text-lg">Login</a>
+            <a href="#" class="hover:text-brand hover:underline lg:text-lg">Register</a>
         </div>
 
-        <div class="flex flex-col">
-            <h3 class="text-brand text-xl font-bold">Policies</h3>
-            <a href="#" class="hover:text-brand">Terms of use</a>
-            <a href="#" class="hover:text-brand">Privacy Policy</a>
+        <div class="flex flex-col lg:h-30">
+            <h3 class="text-brand text-xl lg:text-2xl font-bold">Policies</h3>
+            <a href="#" class="hover:text-brand hover:underline lg:text-lg">Terms of use</a>
+            <a href="#" class="hover:text-brand hover:underline lg:text-lg">Privacy Policy</a>
         </div>
 
-        <div class="flex flex-col">
-            <h3 class="text-brand text-xl font-bold">Contact</h3>
-            <a href="#" class="hover:text-brand">Contact us</a>
-            <a href="#" class="hover:text-brand">Report issue</a>
+        <div class="flex flex-col lg:h-30">
+            <h3 class="text-brand text-xl lg:text-2xl font-bold">Contact</h3>
+            <a href="#" class="hover:text-brand hover:underline lg:text-lg">Contact us</a>
+            <a href="#" class="hover:text-brand hover:underline lg:text-lg">Report issue</a>
         </div>
 
         <div class="flex flex-col items-center justify-center">
             <img src="images/crown.png" class="h-8 w-10">
-            <h3 class="text-xl text-brand font-bold font-playfair">Kingpin.social</h3>
+            <h3 class="text-xl lg:text-2xl text-brand font-bold font-playfair">Kingpin.social</h3>
         </div>
     </footer>
 </body>
