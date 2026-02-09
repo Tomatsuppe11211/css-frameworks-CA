@@ -581,7 +581,55 @@
                     </div>
                 </a>
             </div> 
-        </div> 
+        </div>
+        
+        
+        <!--Modal for creating a post-->
+        <div class="fixed inset-0 z-50 border shadow-xl shadow-black  absolute bg-black/50 p-4 text-white flex flex-col gap-5 items-center justify-center">
+            <form class="w-full p-5 border relative flex flex-col gap-10 text-lg bg-brand w-full max-w-lg overflow-y-auto max-h-[90vh] rounded-xl">
+                <button 
+                    id="closeCreatePost" 
+                    class="absolute right-5 top-2 text-3xl p-1 font-bold hover:text-red-500"
+                >X</button>
+
+                <h1 class="w-full text-center text-2xl font-bold underline">Create a Post</h1>
+
+                <div>
+                    <label for="title" class="text-xl">Title</label>
+                    <input 
+                        type="text" 
+                        id="title" 
+                        placeholder="Create a title (max 30 characters)"
+                        maxlength="30"
+                        class="bg-white text-lg rounded placeholder:text-black py-1 px-2 rounded-lg w-full shadow-lg shadow-black mt-2 text-black"
+                        >
+                </div>
+                
+                
+                <label 
+                    for="add_image"
+                    class="border w-fit bg-white text-black p-2 shadow-lg shadow-black rounded-xl"
+                >
+                Add image</label>
+
+                <input type="file" id="add_image" class="hidden" multiple>
+
+                <div>
+                    <label for="content" >Add a text</label>
+                    <textarea 
+                        id="content" 
+                        placeholder="Add content text (maximum 500 characters)" 
+                        maxlength="500"
+                        class="w-full bg-white text-black p-2 mt-2 border shadow-lg shadow-black rounded-lg placeholder:text-black text-black"
+                        ></textarea>
+                </div>
+                
+                <button 
+                    id="CreatePostButton" 
+                    class="py-2 px-5 text-lg bg-white text-black mb-2 shadow-lg shadow-black rounded-lg"
+                >Post</button>
+            </form>
+        </div>
     </main>
 
     <footer class="border-t border-brand flex flex-col items-center gap-5 py-6 mt-10
