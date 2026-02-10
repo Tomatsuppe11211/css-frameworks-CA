@@ -6,6 +6,7 @@
     <title>Kingpin.Social/Home</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="src/landing.js" defer></script>
+    <script src="src/dark.js" defer></script>
 </head>
 <body class="h-screen w-full flex flex-col">
     <!--Creating the login modal-->
@@ -19,7 +20,7 @@
         id="loginForm"    
         class="bg-login flex flex-col border border-white 
                 text-white rounded-2xl p-5 relative items-center justify-center gap-5 z-50
-                shadow-xl shadow-black"
+                shadow-xl shadow-black dark:bg-dark-sort dark:text-dark-text"
             >
             <button 
                 id="closeLogin"
@@ -38,7 +39,7 @@
                     id="loginEmail"
                     type="email" 
                     placeholder="Enter email..."
-                    class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
+                    class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black dark:bg-dark-sort dark:text-dark-text dark:placeholder:text-dark-text"
                     required
                     >
             </div>
@@ -52,17 +53,17 @@
                     id="loginPassword"
                     type="password" 
                     placeholder="Enter Password..."
-                    class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
+                    class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black dark:bg-dark-sort dark:text-dark-text dark:placeholder:text-dark-text"
                     minlength="8"
                     required
                     >
             </div>
-            <p class="text-black text-lg text-center">Forgot password? Reset <a href="#" class="hover:text-brand underline hover:font-bold">HERE</a></p>
+            <p class="text-black text-lg text-center dark:text-dark-text">Forgot password? Reset <a href="#" class="hover:text-brand underline hover:font-bold">HERE</a></p>
             <input 
                 type="submit" 
                 value="Login"
                 class="text-2xl border border-black shadow-lg shadow-black w-30 py-1 px-3 rounded-2xl font-bold 
-                    text-stroke bg-login-button mb-2 cursor-pointer"
+                    text-stroke bg-login-button mb-2 cursor-pointer dark:bg-brand dark:hover:bg-brand-hover"
                 >
         </form>
         </div>
@@ -78,7 +79,7 @@
                 id="registerForm"
                 class="bg-register flex flex-col w-full border border-white 
                         text-white rounded-2xl p-6 lg:p-8 relative items-center justify-center gap-5
-                        shadow-xl shadow-black"
+                        shadow-xl shadow-black dark:bg-dark-sort dark:text-dark-text"
         >
                 <button 
                     type="button"
@@ -100,7 +101,7 @@
                         id="createUsername"
                         type="text" 
                         placeholder="Create username"
-                        class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
+                        class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black dark:bg-dark-sort dark:text-dark-text dark:placeholder:text-dark-text"
                         required
                     >
                 </div>
@@ -115,7 +116,7 @@
                         id="addEmail"
                         type="email" 
                         placeholder="Enter email"
-                        class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
+                        class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black dark:bg-dark-sort dark:text-dark-text dark:placeholder:text-dark-text"
                         required
                     >
                 </div>
@@ -130,7 +131,7 @@
                         id="createPassword"
                         type="password" 
                         placeholder="Create password"
-                        class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
+                        class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black dark:bg-dark-sort dark:text-dark-text dark:placeholder:text-dark-text"
                         minlength="8"
                         required
                     >
@@ -146,14 +147,14 @@
                         id="confirmPassword"
                         type="password" 
                         placeholder="Confirm password"
-                        class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black"
+                        class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black dark:bg-dark-sort dark:text-dark-text dark:placeholder:text-dark-text"
                         minlength="8"
                         required
                     >
                 </div>
 
                 <p 
-                    class="text-black text-lg text-center">
+                    class="text-black text-lg text-center dark:text-dark-text">
                     Already have an account? login 
                     <a href="#" class="hover:text-brand underline hover:font-bold"
                     >HERE</a>
@@ -164,22 +165,47 @@
                     value="Register"
                     id="registerButton"
                     class="text-2xl border border-black shadow-lg shadow-black w-35 py-1 
-                            px-3 rounded-2xl font-bold text-stroke bg-login-button mb-2 cursor-pointer"
+                            px-3 rounded-2xl font-bold text-stroke bg-login-button mb-2 cursor-pointer dark:bg-dark-register dark:hover:bg-dark-register-hover"
                 >
             </form>
         </div>
     </div>
     
-    <header class="flex flex-row justify-evenly p-4 h-20 bg-white border-b border-brand items-center">
+    <header class="flex flex-row justify-evenly p-4 h-20 bg-white dark:bg-dark-header border-b border-brand items-center">
         <img src="images/crown.png">
         <h1 class="text-3xl lg:text-4xl text-brand font-bold font-playfair">Kingpin.social</h1>
         <img src="images/crown.png">
     </header>
 
-    <main class="bg-[url('/images/background.png')] bg-cover bg-center bg-no-repeat flex-1
-            flex flex-col grow items-center justify-center px-4 py-20 ">
+    <main class="bg-[url('/images/background.png')] dark:bg-[url('/images/concert.png')] bg-cover bg-center bg-no-repeat flex-1
+            flex flex-col grow items-center justify-center px-4 py-20 relative">
 
-        <div class="bg-white max-w-md lg:max-w-2xl h-fit text-center py-10 flex flex-col items-center
+        <div class="flex items-center justify-center p-4 border absolute right-5 top-5 bg-white hover:bg-blue-200 dark:bg-dark-header dark:text-dark-text dark:hover:bg-dark-sort rounded-full">
+            <button 
+                id="desktopMode"
+                class="hover:text-brand cursor-pointer"
+            >
+                <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke-width="1.5" 
+                    stroke="currentColor" 
+                    class="size-8"
+                >
+                    <path 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round" 
+                        d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 
+                            6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 
+                            12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 
+                            3.75 0 0 1 7.5 0Z" 
+                    />
+                </svg>
+            </button>
+        </div>
+
+        <div class="bg-white dark:bg-brand dark:text-dark-text max-w-md lg:max-w-2xl h-fit text-center py-10 flex flex-col items-center
                 px-8 md:px-16 rounded-3xl shadow-2xl shadow-black mx-auto mb-10"
             >
             <h1 class="text-2xl md:text-3xl font-plex font-bold mb-3">Pin your way to the top</h1>
@@ -190,20 +216,20 @@
             <button id="loginModalButton" class="px-6 py-3 border border-black 
                 rounded-full text-2xl md:text-3xl font-bold font-button shadow-xl 
                 shadow-black text-white text-stroke bg-login
-                hover:bg-login-hover cursor-pointer"
+                hover:bg-login-hover dark:bg-brand dark:hover:bg-brand-hover cursor-pointer"
             >Login</button>
 
 
             <button id="registerModalButton" class="px-6 py-3 border border-black 
                 rounded-full text-2xl md:text-3xl font-bold font-button shadow-xl 
                 shadow-black text-white text-stroke bg-register 
-                hover:bg-register-hover cursor-pointer"
+                hover:bg-register-hover dark:bg-dark-register dark:hover:bg-dark-register-hover cursor-pointer"
             >Register</button>
         </div>
     </main>
 
     <footer class="border-t border-brand flex flex-col items-center gap-5 py-6
-            justify-center w-full text-center lg:flex-row md:justify-evenly bg-white"
+            justify-center w-full text-center lg:flex-row md:justify-evenly bg-white dark:bg-dark-header dark:text-dark-text"
         >
 
         <div class="flex flex-col lg:h-30">

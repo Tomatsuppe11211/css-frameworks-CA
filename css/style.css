@@ -9,8 +9,8 @@
       "Courier New", monospace;
     --color-red-400: oklch(70.4% 0.191 22.216);
     --color-red-500: oklch(63.7% 0.237 25.331);
+    --color-blue-200: oklch(88.2% 0.059 254.128);
     --color-blue-400: oklch(70.7% 0.165 254.624);
-    --color-violet-400: oklch(70.2% 0.183 293.541);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -52,6 +52,8 @@
     --color-dark-button: #868686;
     --color-dark-post-hover: #454545;
     --color-brand-hover: #B737D1;
+    --color-dark-register: #216DDF;
+    --color-dark-register-hover: #1B5CBD;
     --font-playfair: "playfair Display", Georgia, Serif;
     --font-plex: "IBM plex Mono", monospace;
     --font-inter: "Inter", sans-serif;
@@ -229,6 +231,15 @@
   }
   .top-2 {
     top: calc(var(--spacing) * 2);
+  }
+  .top-5 {
+    top: calc(var(--spacing) * 5);
+  }
+  .top-10 {
+    top: calc(var(--spacing) * 10);
+  }
+  .top-20 {
+    top: calc(var(--spacing) * 20);
   }
   .right-0 {
     right: calc(var(--spacing) * 0);
@@ -675,6 +686,20 @@
       color: var(--color-black);
     }
   }
+  .hover\:bg-black {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-black);
+      }
+    }
+  }
+  .hover\:bg-blue-200 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-blue-200);
+      }
+    }
+  }
   .hover\:bg-blue-400 {
     &:hover {
       @media (hover: hover) {
@@ -901,14 +926,31 @@
       background-color: var(--color-dark-header);
     }
   }
+  .dark\:bg-dark-register {
+    &:where(.dark, .dark *) {
+      background-color: var(--color-dark-register);
+    }
+  }
   .dark\:bg-dark-sort {
     &:where(.dark, .dark *) {
       background-color: var(--color-dark-sort);
     }
   }
+  .dark\:bg-\[url\(\'\/images\/concert\.png\'\)\] {
+    &:where(.dark, .dark *) {
+      background-image: url('/images/concert.png');
+    }
+  }
   .dark\:text-dark-text {
     &:where(.dark, .dark *) {
       color: var(--color-dark-text);
+    }
+  }
+  .dark\:placeholder\:text-dark-text {
+    &:where(.dark, .dark *) {
+      &::placeholder {
+        color: var(--color-dark-text);
+      }
     }
   }
   .dark\:hover\:bg-brand {
@@ -938,11 +980,29 @@
       }
     }
   }
-  .dark\:hover\:bg-violet-400 {
+  .dark\:hover\:bg-dark-register {
     &:where(.dark, .dark *) {
       &:hover {
         @media (hover: hover) {
-          background-color: var(--color-violet-400);
+          background-color: var(--color-dark-register);
+        }
+      }
+    }
+  }
+  .dark\:hover\:bg-dark-register-hover {
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-dark-register-hover);
+        }
+      }
+    }
+  }
+  .dark\:hover\:bg-dark-sort {
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-dark-sort);
         }
       }
     }

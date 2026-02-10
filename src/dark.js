@@ -18,13 +18,24 @@ function toggleMode(){
 
     //Changing icons based on mode
     desktopToggler.innerHTML = isDark ? moon: sun;
-    mobileToggler.innerHTML = isDark ? moon: sun;
+    if(mobileToggler){
+        mobileToggler.innerHTML = isDark ? moon: sun;
+    }
+    
 }
 
 
 //Adding eventlisteners
-desktopToggler.addEventListener('click', toggleMode);
-mobileToggler.addEventListener('click', toggleMode);
+if(desktopToggler){
+    desktopToggler.addEventListener('click', toggleMode);
+}
+
+
+
+if(mobileToggler){
+    mobileToggler.addEventListener('click', toggleMode);
+}
+
 
 
 //loading/Respecting system preferences
@@ -34,9 +45,15 @@ if(
 ){
     document.documentElement.classList.add('dark');
     desktopToggler.innerHTML = moon;
-    mobileToggler.innerHTML = moon;
+    if(mobileToggler){
+        mobileToggler.innerHTML = moon;
+    }
+    
 } else {
     document.documentElement.classList.remove('dark')
     desktopToggler.innerHTML = sun;
-    mobileToggler.innerHTML = sun;
+    if(mobileToggler){
+        mobileToggler.innerHTML = sun;
+    }
+    
 }
