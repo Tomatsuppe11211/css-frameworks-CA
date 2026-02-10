@@ -94,9 +94,15 @@ closeButton.addEventListener('click', function(e){
 });
 
 
-//Alerting a successful form submission after HTML validation
-publishPostButton.addEventListener('click', function(){
-    alert('Post published');
+//getting and adding function to the create a post form
+const postForm = document.getElementById('postForm');
+
+postForm.addEventListener('submit', function(){
+    if(postForm.checkValidity()){
+        alert('Post published');
+        hidePostModal();
+    }
+    
 });
 
 

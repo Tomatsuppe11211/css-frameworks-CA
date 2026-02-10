@@ -361,9 +361,9 @@
                 <!--sorting section-->
                 <div class="flex flex-col gap-5 w-full items-center">
                     <h1 class="font-bold font-playfair text-2xl text-center">Sort</h1>
-                    <select class="bg-white dark:bg-dark-sort border dark:border-none shadow-lg shadow-black p-2 text-lg w-full max-w-50 cursor-pointer">
+                    <select class="bg-white dark:bg-dark-sort border shadow-lg shadow-black p-2 text-lg w-full max-w-50 cursor-pointer">
                         <option>Sort by</option>
-                        <optinon>Newest</optinon>
+                        <option>Newest</option>
                         <option>Oldest</option>
                         <option>Most likes</option>
                     </select>
@@ -405,7 +405,7 @@
                 <!--create post button-->
                 <div  
                     id="createPostButton"
-                    class="flex flex-row items-center justify-center w-full max-w-60 lg:max-w-80 border rounded-full py-3 bg-post dark:bg-brand dark:text-dark-text hover:bg-white shadow-lg shadow-black cursor-pointer"
+                    class="flex flex-row items-center justify-center w-full max-w-60 lg:max-w-80 border rounded-full py-3 bg-post dark:bg-brand dark:text-dark-text hover:bg-white dark:hover:bg-brand-hover shadow-lg shadow-black cursor-pointer"
                 >
                     <h1 class="text-lg lg:text-xl font-bold font-playfair">Create a post</h1>
 
@@ -637,7 +637,7 @@
         
         <!--Modal for creating a post-->
         <div id="modal" class="hidden fixed inset-0 z-50 border bg-black/50 p-4 text-white dark:text-dark-text flex-col gap-5 items-center justify-center">
-            <form class="w-full p-5 border relative flex flex-col gap-10 text-lg bg-brand dark:bg-dark-sort max-w-lg overflow-y-auto max-h-[90vh] rounded-xl shadow-xl shadow-black">
+            <form id="postForm" class="w-full p-5 border relative flex flex-col gap-10 text-lg bg-brand dark:bg-dark-sort max-w-lg overflow-y-auto max-h-[90vh] rounded-xl shadow-xl shadow-black">
                 <button 
                     id="closeCreatePost" 
                     class="absolute right-5 top-2 text-3xl p-1 font-bold hover:text-red-500 cursor-pointer"
@@ -653,7 +653,7 @@
                         placeholder="Create a title (max 30 characters)"
                         maxlength="30"
                         class="bg-white text-lg placeholder:text-black py-1 px-2 rounded-lg w-full shadow-lg shadow-black mt-2 text-black"
-                        req
+                        required
                         >
                 </div>
                 

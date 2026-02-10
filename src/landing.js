@@ -29,6 +29,7 @@ loginForm.addEventListener('submit', function(e){
     e.preventDefault();
 
     if(loginForm.checkValidity()){
+        alert('Logging in')
         proceed();
     }
     
@@ -44,9 +45,7 @@ registerForm.addEventListener('submit', function(e){
         return
     }
 
-    //Getting register details
-    const username = document.getElementById('createUsername').value;
-    const email = document.getElementById('addEmail').value
+    //Getting password infomation
     const createdPassword = document.getElementById('createPassword').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
 
@@ -62,6 +61,7 @@ registerForm.addEventListener('submit', function(e){
         return
     }
     
+    alert('Account created. Loggin in now.')
     proceed();
 });
 
