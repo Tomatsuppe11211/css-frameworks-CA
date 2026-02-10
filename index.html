@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kingpin.Social/Home</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="src/modals.js" defer></script>
+    <script src="src/landing.js" defer></script>
 </head>
 <body class="h-screen w-full flex flex-col">
     <!--Creating the login modal-->
@@ -15,7 +15,9 @@
     >
 
         <div class="w-full max-w-md lg:max-w-2xl overflow-y-auto max-h-[90vh] rounded-xl">
-        <form class="bg-login flex flex-col border border-white 
+        <form 
+        id="loginForm"    
+        class="bg-login flex flex-col border border-white 
                 text-white rounded-2xl p-5 relative items-center justify-center gap-5 z-50
                 shadow-xl shadow-black"
             >
@@ -59,7 +61,6 @@
             <input 
                 type="submit" 
                 value="Login"
-                id="loginButton"
                 class="text-2xl border border-black shadow-lg shadow-black w-30 py-1 px-3 rounded-2xl font-bold 
                     text-stroke bg-login-button mb-2 cursor-pointer"
                 >
@@ -74,6 +75,7 @@
     >
         <div class="w-full max-w-md lg:max-w-2xl overflow-y-auto max-h-[90vh] rounded-xl">
             <form 
+                id="registerForm"
                 class="bg-register flex flex-col w-full border border-white 
                         text-white rounded-2xl p-6 lg:p-8 relative items-center justify-center gap-5
                         shadow-xl shadow-black"
