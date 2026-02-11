@@ -106,6 +106,18 @@ postForm.addEventListener('submit', function(){
 });
 
 
+//Getting profile buttons
+const mobileProfileButton = document.getElementById('mobileProfileLogo');
+const desktopProfileButton = document.getElementById('desktopProfileLogo');
+
+//Creating a function that takes the user to their profile
+function goToProfile(){
+    window.location.href = '../profiles/index.html';
+}
+
+//Adding the functions to the profile icons
+mobileProfileButton.addEventListener('click', goToProfile);
+desktopProfileButton.addEventListener('click', goToProfile);
 
 
 //Getting the logout button
@@ -115,6 +127,7 @@ const desktopLogoutButton = document.getElementById('desktopLogout');
 
 //Logout function
 function logout(){
+    sessionStorage.removeItem('user');
     alert('Logging out');
     window.location.href='../index.html';
 };

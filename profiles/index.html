@@ -8,7 +8,7 @@
     <script src="../src/dark.js" defer></script>
     <script src="../src/profiles.js" defer></script>
 </head>
-<body class="flex flex-col gap-10">
+<body class="flex flex-col gap-10 bg-body dark:bg-dark">
     <header class="flex flex-row justify-evenly items-center p-4 h-20 bg-white dark:bg-dark-header dark:text-dark-text border-b dark:border-b-black">
         <!--Mobile header-->
         <div class="flex flex-row justify-between w-full items-center md:hidden">
@@ -38,13 +38,13 @@
         <!--Dropdown navbar for mobile-->
         <nav 
             id="dropdownNavbar"
-            class="hidden flex-col bg-white dark:bg-dark-header border-l p-2 absolute top-0 right-0 items-center justify-evenly w-full max-w-50 h-full"
+            class="hidden flex-col bg-white dark:bg-dark-header border-l p-2 absolute top-0 right-0 items-center justify-evenly w-full max-w-50 h-full z-20"
             >
             <button 
                 id="closeNavbar"
                 class="w-fit p-2 text-2xl absolute right-5 top-1 font-bold hover:text-red-500 text-stroke cursor-pointer"
             >X</button>
-            <a href="#" class="underline text-brand font-bold text-lg lg:text-xl xl:text-2xl">Feed</a>
+            <a href="../feed/index.html" class="underline text-brand font-bold text-lg lg:text-xl xl:text-2xl">Feed</a>
             <a href="#" class="hover:font-bold hover:text-brand hover:underline text-lg lg:text-xl xl:text-2xl">Posts</a>
             <a href="#" class="hover:font-bold hover:text-brand hover:underline text-lg lg:text-xl xl:text-2xl">Friends</a>
             
@@ -128,7 +128,7 @@
                     <h1 class="text-3xl lg:text-4xl text-brand font-bold font-playfair">Kingpin.social</h1>
                 </div>
                 <div class="w-full max-w-lg flex flex-row justify-evenly">
-                    <a href="#" class="underline text-brand font-bold text-lg lg:text-xl xl:text-2xl">Feed</a>
+                    <a href="../feed/index.html" class="underline text-brand font-bold text-lg lg:text-xl xl:text-2xl">Feed</a>
                     <a href="#" class="hover:font-bold hover:text-brand hover:underline text-lg lg:text-xl xl:text-2xl">Posts</a>
                     <a href="#" class="hover:font-bold hover:text-brand hover:underline text-lg lg:text-xl xl:text-2xl">Friends</a>
                     
@@ -208,16 +208,29 @@
     </header>
 
     <main class="flex flex-col items-center justify-center">
-        <div class="flex flex-col items-center justify-center border w-full max-w-lg shadow-xl shadow-black gap-5">
-            <h1 class="mt-5">My profile card</h1>
+        <div class="flex flex-col relative items-center justify-center border w-full max-w-lg lg:max-w-2xl rounded-xl shadow-xl shadow-black gap-5 bg-post dark:bg-dark-sort dark:text-dark-text dark:border-black">
             
             <img 
+                id="avatar"
                 src="https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                 alt="Profile picture"
-                class="h-40 w-40 border rounded-full shadow-lg shadow-black"
+                class="h-40 w-40 border rounded-full shadow-lg shadow-black mt-5"
                 >
 
-            <h1></h1>
+            <h1 id="username" class="text-2xl font-bold font-playfair">Bat-coder</h1>
+
+            <button class="border border-black bg-login hover:bg-login-hover font-bold p-2 rounded-md shadow-lg shadow-black dark:bg-brand dark:hover:bg-brand-hover cursor-pointer">Edit profile</button>
+
+            <div class="flex flex-row items-center justify-between w-full max-w-md p-2 text-lg mt-5">
+                <p id="followers">Followers: 12</p>
+                <p id="following">Following: 26</p>
+                <p id="postCount">Posts: 0</p>
+            </div>
+
+            <div class="flex flex-col items-center justify-center mb-10 gap-5">
+                <h2 class="text-xl font-bold">My posts</h2>
+                <p class="text-lg">You have no posts. you can create a post on the <a href="../feed/index.html  " class="text-login font-bold underline">Feed</a> page</p>
+            </div>
         </div>
     </main>
 

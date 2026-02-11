@@ -22,14 +22,14 @@ const registerForm = document.getElementById('registerForm');
 
 //function for redirecting
 function proceed(){
-    window.location.href='/feed/index.html';
+    window.location.href='/profiles/index.html';
 }
 
 loginForm.addEventListener('submit', function(e){
     e.preventDefault();
-
+    sessionStorage.removeItem('user');
     if(loginForm.checkValidity()){
-        alert('Logging in')
+        alert('Logging in');
         proceed();
     }
     
@@ -42,26 +42,31 @@ registerForm.addEventListener('submit', function(e){
     e.preventDefault();
 
     if(!registerForm.checkValidity()){
-        return
+        return;
     }
 
     //Getting password infomation
+    const username = document.getElementById('createUsername')
     const createdPassword = document.getElementById('createPassword').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
 
     if(createdPassword.length < 8){
-        errorMessage.innerHTML = `Your password must contain at least 8 characters`
-        errorMessage.style.display = 'block'
+        errorMessage.innerHTML = `Your password must contain at least 8 characters`;
+        errorMessage.style.display = 'block';
         return
     }
     
     if(createdPassword != confirmPassword){
-        errorMessage.innerHTML = `Your passwords do not match`
-        errorMessage.style.display = 'block'
+        errorMessage.innerHTML = `Your passwords do not match`;
+        errorMessage.style.display = 'block';
         return
     }
     
-    alert('Account created. Loggin in now.')
+    const newUser = username.value;
+    sessionStorage.removeItem('user');
+    sessionStorage.setItem('user', newUser);
+
+    alert('Account created. Loggin in now.');
     proceed();
 });
 
