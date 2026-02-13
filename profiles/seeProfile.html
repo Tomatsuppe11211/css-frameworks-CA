@@ -8,7 +8,7 @@
     <script src="../src/seeProfile.js" defer></script>
     <script src="../src/dark.js" defer></script>
 </head>
-<body class="flex flex-col gap-10 bg-body dark:bg-dark">
+<body class="flex flex-col gap-10 bg-body dark:bg-dark h-screen">
     <header class="flex flex-row justify-evenly items-center p-4 h-20 bg-white dark:bg-dark-header dark:text-dark-text border-b dark:border-b-black">
         <!--Mobile header-->
         <div class="flex flex-row justify-between w-full items-center md:hidden">
@@ -209,7 +209,7 @@
         </div>
     </header>
 
-    <main class="flex flex-col items-center justify-center">
+    <main class="flex flex-1 flex-col items-center justify-center w-full">
         <div class="flex flex-col relative items-center justify-center border w-full max-w-lg lg:max-w-2xl rounded-xl shadow-xl shadow-black gap-5 bg-post dark:bg-dark-sort dark:text-dark-text dark:border-black">
             <img 
                 id="avatar"
@@ -219,6 +219,8 @@
                 >
 
             <h1 id="username" class="text-2xl font-bold font-playfair">Madeleine14</h1>
+
+            <p class="w-md">I'm Madeleine, playing as number 14 for Tigers Volleyball team. Sharing my sporty story!</p>
 
             <div class="flex flex-row items-center justify-between w-full max-w-md p-2 text-lg mt-5">
                 <p id="followers">Followers: 65</p>
@@ -232,15 +234,15 @@
                 <h2 class="text-xl font-bold">Madeleine14's posts</h2>
                 
                 <!--Posts displays-->
-                <div class="flex flex-row flex-wrap justify-between border w-full gap-5">
-                    <div class="flex flex-col gap-2 items-center">
-                        <img src="../images/volleyball_team.png" class="w-35 lg:w-50 h-30">
-                        <a href="#" class="font-bold lg:text-lg underline">The Final Showdown</a>
-                    </div>
-                    <div class="flex flex-col gap-2 items-center">
-                        <img src="../images/volleyball.png" class="w-35 lg:w-50 h-30">
-                        <a href="#" class="font-bold lg:text-lg underline">Joining The Team</a>
-                    </div>
+                <div class="flex flex-row flex-wrap justify-between w-full gap-5 py-2">
+                    <a href="#" class="flex flex-col gap-2 items-center hover:text-blue-500 dark:hover:text-brand w-40 lg:w-50">
+                        <img src="../images/volleyball_team.png" class="h-25 lg:h-30 w-full">
+                        <p class="font-bold text-md lg:text-lg underline flex">The Final Showdown</p>
+                    </a>
+                    <a href="#"  class="flex flex-col gap-2 items-center hover:text-blue-500 dark:hover:text-brand w-40 lg:w-50">
+                        <img src="../images/volleyball.png" class="h-25 lg:h-30 w-full">
+                        <p class="font-bold lg:text-lg underline">Joining The Team</p>
+                    </a>
                     
                 </div>
             </div>

@@ -17,7 +17,9 @@
 
         <div class="w-full max-w-md lg:max-w-2xl overflow-y-auto max-h-[90vh] rounded-xl">
         <form 
-            id="loginForm"    
+            id="loginForm"
+            action="/profiles/index.html"
+            method="get"    
             class="bg-login flex flex-col border border-white 
                     text-white rounded-2xl p-5 relative items-center justify-center gap-5 z-50
                     shadow-xl shadow-black dark:bg-dark-sort dark:text-dark-text"
@@ -37,6 +39,7 @@
 
                 <input 
                     id="loginEmail"
+                    name="email"
                     type="email" 
                     placeholder="Enter email..."
                     class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black dark:bg-dark-sort dark:text-dark-text dark:placeholder:text-dark-text"
@@ -51,6 +54,7 @@
 
                 <input 
                     id="loginPassword"
+                    name="password"
                     type="password" 
                     placeholder="Enter Password..."
                     class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black dark:bg-dark-sort dark:text-dark-text dark:placeholder:text-dark-text"
@@ -77,9 +81,12 @@
         <div class="w-full max-w-md lg:max-w-2xl overflow-y-auto max-h-[90vh] rounded-xl">
             <form 
                 id="registerForm"
+                action="/profiles/index.html"
+                method = 'get'
                 class="bg-register flex flex-col w-full border border-white 
                         text-white rounded-2xl p-6 lg:p-8 relative items-center justify-center gap-5
                         shadow-xl shadow-black dark:bg-dark-sort dark:text-dark-text"
+                
         >
                 <button 
                     type="button"
@@ -88,8 +95,6 @@
                 >X</button>
 
                 <h2 class="text-center text-4xl font-bold text-inter text-stroke">Register</h2>
-                
-                <p id="registerError" class="hidden p-2 border border-white bg-red-400 w-full max-w-sm lg:max-w-md text-center rounded-lg text-lg font-bold">The passwords do not match</p>
 
                 <div class="flex flex-col w-full max-w-sm lg:max-w-md p-2 gap-3">
                     <label 
@@ -99,6 +104,7 @@
 
                     <input 
                         id="createUsername"
+                        name="username"
                         type="text" 
                         placeholder="Create username"
                         class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black dark:bg-dark-sort dark:text-dark-text dark:placeholder:text-dark-text"
@@ -114,6 +120,7 @@
 
                     <input 
                         id="addEmail"
+                        name="email"
                         type="email" 
                         placeholder="Enter email"
                         class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black dark:bg-dark-sort dark:text-dark-text dark:placeholder:text-dark-text"
@@ -129,6 +136,7 @@
 
                     <input 
                         id="createPassword"
+                        name="password"
                         type="password" 
                         placeholder="Create password"
                         class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black dark:bg-dark-sort dark:text-dark-text dark:placeholder:text-dark-text"
@@ -145,6 +153,7 @@
 
                     <input 
                         id="confirmPassword"
+                        name="confirmPassword"
                         type="password" 
                         placeholder="Confirm password"
                         class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black dark:bg-dark-sort dark:text-dark-text dark:placeholder:text-dark-text"

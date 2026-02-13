@@ -7,68 +7,10 @@ const registerModalButton = document.getElementById('registerModalButton');
 const loginModal = document.getElementById('login-modal');
 const registerModal = document.getElementById('register-modal');
 
-//Getting the error message for register modal
-const errorMessage = document.getElementById('registerError');
-
 //Getting the close buttons for the modals
 const closeLoginButton = document.getElementById('closeLogin');
 const closeRegisterButton = document.getElementById('closeRegister');
 
-
-//Getting login and register buttons inside the forms
-const loginForm = document.getElementById('loginForm');
-const registerForm = document.getElementById('registerForm');
-
-
-//function for redirecting
-function proceed(){
-    window.location.href='/profiles/index.html';
-}
-
-loginForm.addEventListener('submit', function(e){
-    e.preventDefault();
-    sessionStorage.removeItem('user');
-    if(loginForm.checkValidity()){
-        alert('Logging in');
-        proceed();
-    }
-    
-})
-
-
-//register function to check passwords and username
-registerForm.addEventListener('submit', function(e){
-
-    e.preventDefault();
-
-    if(!registerForm.checkValidity()){
-        return;
-    }
-
-    //Getting password infomation
-    const username = document.getElementById('createUsername')
-    const createdPassword = document.getElementById('createPassword').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
-
-    if(createdPassword.length < 8){
-        errorMessage.innerHTML = `Your password must contain at least 8 characters`;
-        errorMessage.style.display = 'block';
-        return
-    }
-    
-    if(createdPassword != confirmPassword){
-        errorMessage.innerHTML = `Your passwords do not match`;
-        errorMessage.style.display = 'block';
-        return
-    }
-    
-    const newUser = username.value;
-    sessionStorage.removeItem('user');
-    sessionStorage.setItem('user', newUser);
-
-    alert('Account created. Loggin in now.');
-    proceed();
-});
 
 //Functions to make modals visible/invisible
 function showLoginModal(){
