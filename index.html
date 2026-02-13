@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kingpin.Social/Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="src/landing.js" defer></script>
+    <script src="src/dark.js" defer></script>
+</head>
+<body class="h-screen w-full flex flex-col">
+    <!--Creating the login modal-->
+    <div 
+        id="login-modal" 
+        class="fixed inset-0 hidden items-center justify-center bg-black/50 z-50 overflow-y-auto p-4"
+    >
+
+        <div class="w-full max-w-md lg:max-w-2xl overflow-y-auto max-h-[90vh] rounded-xl">
+        <form 
+            id="loginForm"
+            action="/profiles/index.html"
+            method="get"    
+            class="bg-login flex flex-col border border-white 
+                    text-white rounded-2xl p-5 relative items-center justify-center gap-5 z-50
+                    shadow-xl shadow-black dark:bg-dark-sort dark:text-dark-text"
+            >
+            <button 
+                id="closeLogin"
+                class="w-fit p-2 text-4xl absolute right-5 top-2 font-bold hover:text-red-500 text-stroke cursor-pointer"
+            >X</button>
+
+            <h2 class="text-center text-4xl font-bold text-inter text-stroke">Login</h2>
+
+            <div class="flex flex-col w-full max-w-sm lg:max-w-md p-2 gap-3">
+                <label 
+                    for="loginEmail"
+                    class="text-2xl text-stroke font-bold"
+                >Email</label>
+
+                <input 
+                    id="loginEmail"
+                    name="email"
+                    type="email" 
+                    placeholder="Enter email..."
+                    class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black dark:bg-dark-sort dark:text-dark-text dark:placeholder:text-dark-text"
+                    required
+                    >
+            </div>
+            <div class="flex flex-col w-full max-w-sm lg:max-w-md p-2 gap-3">
+                <label 
+                    for="loginPassword"
+                    class="text-2xl text-stroke font-bold"
+                >Password</label>
+
+                <input 
+                    id="loginPassword"
+                    name="password"
+                    type="password" 
+                    placeholder="Enter Password..."
+                    class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black dark:bg-dark-sort dark:text-dark-text dark:placeholder:text-dark-text"
+                    minlength="8"
+                    required
+                    >
+            </div>
+            <p class="text-black text-lg text-center dark:text-dark-text">Forgot password? Reset <a href="#" class="hover:text-brand underline hover:font-bold">HERE</a></p>
+            <input 
+                type="submit" 
+                value="Login"
+                class="text-2xl border border-black shadow-lg shadow-black w-30 py-1 px-3 rounded-2xl font-bold 
+                    text-stroke bg-login-button mb-2 cursor-pointer dark:bg-brand dark:hover:bg-brand-hover"
+                >
+        </form>
+        </div>
+    </div>
+
+    <!--creating the register modal-->
+    <div 
+        id="register-modal"
+        class="fixed inset-0 hidden items-center justify-center bg-black/50 z-50 p-4"
+    >
+        <div class="w-full max-w-md lg:max-w-2xl overflow-y-auto max-h-[90vh] rounded-xl">
+            <form 
+                id="registerForm"
+                action="/profiles/index.html"
+                method = 'get'
+                class="bg-register flex flex-col w-full border border-white 
+                        text-white rounded-2xl p-6 lg:p-8 relative items-center justify-center gap-5
+                        shadow-xl shadow-black dark:bg-dark-sort dark:text-dark-text"
+                
+        >
+                <button 
+                    type="button"
+                    id="closeRegister"
+                    class="w-fit p-2 text-4xl absolute right-5 top-2 font-bold hover:text-red-500 text-stroke cursor-pointer"
+                >X</button>
+
+                <h2 class="text-center text-4xl font-bold text-inter text-stroke">Register</h2>
+
+                <div class="flex flex-col w-full max-w-sm lg:max-w-md p-2 gap-3">
+                    <label 
+                        for="createUsername"
+                        class="text-2xl text-stroke font-bold"
+                    >Create username</label>
+
+                    <input 
+                        id="createUsername"
+                        name="username"
+                        type="text" 
+                        placeholder="Create username"
+                        class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black dark:bg-dark-sort dark:text-dark-text dark:placeholder:text-dark-text"
+                        required
+                    >
+                </div>
+
+                <div class="flex flex-col w-full max-w-sm lg:max-w-md p-2 gap-3">
+                    <label 
+                        for="addEmail"
+                        class="text-2xl text-stroke font-bold"
+                    >Email</label>
+
+                    <input 
+                        id="addEmail"
+                        name="email"
+                        type="email" 
+                        placeholder="Enter email"
+                        class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black dark:bg-dark-sort dark:text-dark-text dark:placeholder:text-dark-text"
+                        required
+                    >
+                </div>
+
+                <div class="flex flex-col w-full max-w-sm lg:max-w-md p-2 gap-3">
+                    <label 
+                        for="createPassword"
+                        class="text-2xl text-stroke font-bold"
+                    >Create Password</label>
+
+                    <input 
+                        id="createPassword"
+                        name="password"
+                        type="password" 
+                        placeholder="Create password"
+                        class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black dark:bg-dark-sort dark:text-dark-text dark:placeholder:text-dark-text"
+                        minlength="8"
+                        required
+                    >
+                </div>
+
+                <div class="flex flex-col w-full max-w-sm lg:max-w-md p-2 gap-3">
+                    <label 
+                        for="confirmPassword"
+                        class="text-2xl text-stroke font-bold"
+                    >Confirm password</label>
+
+                    <input 
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        type="password" 
+                        placeholder="Confirm password"
+                        class="w-full border rounded-lg py-2 px-4 text-lg bg-white placeholder:text-black text-black dark:bg-dark-sort dark:text-dark-text dark:placeholder:text-dark-text"
+                        minlength="8"
+                        required
+                    >
+                </div>
+
+                <p 
+                    class="text-black text-lg text-center dark:text-dark-text">
+                    Already have an account? login 
+                    <a href="#" class="hover:text-brand underline hover:font-bold"
+                    >HERE</a>
+                </p>
+
+                <input 
+                    type="submit" 
+                    value="Register"
+                    id="registerButton"
+                    class="text-2xl border border-black shadow-lg shadow-black w-35 py-1 
+                            px-3 rounded-2xl font-bold text-stroke bg-login-button mb-2 cursor-pointer dark:bg-dark-register dark:hover:bg-dark-register-hover"
+                >
+            </form>
+        </div>
+    </div>
+    
+    <header class="flex flex-row justify-evenly p-4 h-20 bg-white dark:bg-dark-header border-b border-brand items-center">
+        <img src="images/crown.png">
+        <h1 class="text-3xl lg:text-4xl text-brand font-bold font-playfair">Kingpin.social</h1>
+        <img src="images/crown.png">
+    </header>
+
+    <main class="bg-[url('/images/background.png')] dark:bg-[url('/images/concert.png')] bg-cover bg-center bg-no-repeat flex-1
+            flex flex-col grow items-center justify-center px-4 py-20 relative">
+
+        <div class="flex items-center justify-center p-4 border absolute right-5 top-5 bg-white hover:bg-blue-200 dark:bg-dark-header dark:text-dark-text dark:hover:bg-dark-sort rounded-full">
+            <button 
+                id="desktopMode"
+                class="hover:text-brand cursor-pointer"
+            >
+                <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke-width="1.5" 
+                    stroke="currentColor" 
+                    class="size-8"
+                >
+                    <path 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round" 
+                        d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 
+                            6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 
+                            12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 
+                            3.75 0 0 1 7.5 0Z" 
+                    />
+                </svg>
+            </button>
+        </div>
+
+        <div class="bg-white dark:bg-brand dark:text-dark-text max-w-md lg:max-w-2xl h-fit text-center py-10 flex flex-col items-center
+                px-8 md:px-16 rounded-3xl shadow-2xl shadow-black mx-auto mb-10"
+            >
+            <h1 class="text-2xl md:text-3xl font-plex font-bold mb-3">Pin your way to the top</h1>
+            <p class="text-lg text-inter md:text-xl">Create , share and brag about your content</p>
+        </div>
+
+        <div class="flex flex-col md:flex-row h-fit py-5 items-center gap-5">
+            <button id="loginModalButton" class="px-6 py-3 border border-black 
+                rounded-full text-2xl md:text-3xl font-bold font-button shadow-xl 
+                shadow-black text-white text-stroke bg-login
+                hover:bg-login-hover dark:bg-brand dark:hover:bg-brand-hover cursor-pointer"
+            >Login</button>
+
+
+            <button id="registerModalButton" class="px-6 py-3 border border-black 
+                rounded-full text-2xl md:text-3xl font-bold font-button shadow-xl 
+                shadow-black text-white text-stroke bg-register 
+                hover:bg-register-hover dark:bg-dark-register dark:hover:bg-dark-register-hover cursor-pointer"
+            >Register</button>
+        </div>
+    </main>
+
+    <footer class="border-t border-brand flex flex-col items-center gap-5 py-6
+            justify-center w-full text-center lg:flex-row md:justify-evenly bg-white dark:bg-dark-header dark:text-dark-text"
+        >
+
+        <div class="flex flex-col lg:h-30">
+            <h3 class="text-brand text-xl lg:text-2xl font-bold">Join us</h3>
+            <a href="#" class="hover:text-brand hover:underline lg:text-lg">About us</a>
+            <a href="#" class="hover:text-brand hover:underline lg:text-lg">Login</a>
+            <a href="#" class="hover:text-brand hover:underline lg:text-lg">Register</a>
+        </div>
+
+        <div class="flex flex-col lg:h-30">
+            <h3 class="text-brand text-xl lg:text-2xl font-bold">Policies</h3>
+            <a href="#" class="hover:text-brand hover:underline lg:text-lg">Terms of use</a>
+            <a href="#" class="hover:text-brand hover:underline lg:text-lg">Privacy Policy</a>
+        </div>
+
+        <div class="flex flex-col lg:h-30">
+            <h3 class="text-brand text-xl lg:text-2xl font-bold">Contact</h3>
+            <a href="#" class="hover:text-brand hover:underline lg:text-lg">Contact us</a>
+            <a href="#" class="hover:text-brand hover:underline lg:text-lg">Report issue</a>
+        </div>
+
+        <div class="flex flex-col items-center justify-center">
+            <img src="images/crown.png" class="h-8 w-10">
+            <h3 class="text-xl lg:text-2xl text-brand font-bold font-playfair">Kingpin.social</h3>
+        </div>
+    </footer>
+</body>
+</html>
